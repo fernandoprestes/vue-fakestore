@@ -923,6 +923,11 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
+"@iconify-prerendered/vue-ph@^0.13.1656183091":
+  version "0.13.1656183091"
+  resolved "https://registry.yarnpkg.com/@iconify-prerendered/vue-ph/-/vue-ph-0.13.1656183091.tgz#7295014aac2f0e53b57411b21c3b6fcc3a538353"
+  integrity sha512-fH6Iolcz8dKC+d8txpjVY2icCWa/cqO41Y5sI2bdU/oBw+KJXi4exoMeA/nZGySIE3U0baX6hrrYpkWY4nKJXg==
+
 "@mapbox/node-pre-gyp@^1.0.0":
   version "1.0.10"
   resolved "https://registry.yarnpkg.com/@mapbox/node-pre-gyp/-/node-pre-gyp-1.0.10.tgz#8e6735ccebbb1581e5a7e652244cadc8a844d03c"
@@ -1618,6 +1623,11 @@ ajv@^8.0.0, ajv@^8.11.0:
     json-schema-traverse "^1.0.0"
     require-from-string "^2.0.2"
     uri-js "^4.2.2"
+
+animate.css@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/animate.css/-/animate.css-4.1.1.tgz#614ec5a81131d7e4dc362a58143f7406abd68075"
+  integrity sha512-+mRmCTv6SbCmtYJCN4faJMNFVNN5EuCTTprDTAo7YzIGji2KADmakjVA3+8mVDkZ2Bf09vayB35lSQIex2+QaQ==
 
 ansi-align@^3.0.0:
   version "3.0.1"

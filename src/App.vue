@@ -1,3 +1,8 @@
+<script setup lang="ts">
+  import LayoutsView from '~/layouts/index.vue';
+</script>
 <template>
-  <router-view />
+  <LayoutsView>
+    <RouterView />
+  </LayoutsView>
 </template>
