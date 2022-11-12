@@ -11,9 +11,11 @@ Este repositório é um laboratorio de estudos e serve como um template para pro
 - [Eslint](https://eslint.org/)
 - [Eslint-plugin-vue](https://eslint.vuejs.org/)
 - [Prettier](https://prettier.io/)
-- [tailwindcss](https://tailwindcss.com/)
-- [vueuse](https://vueuse.org/)
+- [Tailwindcss](https://tailwindcss.com/)
+- [VueUse](https://vueuse.org/)
 - [husky](https://typicode.github.io/husky/#/)
+- [@iconify-prerendered/vue-ph](https://github.com/cawa-93/iconify-prerendered)
+- [animate.css](https://animate.style/)
 
 ### Ferramentas recomendadas
 
