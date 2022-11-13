@@ -8,7 +8,7 @@
   });
 </script>
 <template>
-  <div class="h-screen bg-slate-800 text-slate-100">
+  <div class="bg-slate-800 text-slate-100">
     <component :is="layout" />
   </div>
 </template>

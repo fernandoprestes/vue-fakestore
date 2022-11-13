@@ -1,7 +1,7 @@
 <script lang="ts" setup>
   import { ref } from 'vue';
   import { IconShoppingCart } from '@iconify-prerendered/vue-ph';
-  import DialogStoreCart from '~/components/DialogStoreCart.vue';
+  import DialogStoreCart from './DialogStoreCart.vue';
 
   const openCardDialog = ref(false);
 
@@ -24,7 +24,9 @@
         @click="handleCardDialog"
       >
         <IconShoppingCart class="h-10 w-10" />
-        <span class="absolute left-5 top-6 h-6 w-6 rounded-full bg-slate-100 text-sm font-bold text-green-600">14</span>
+        <div class="absolute left-5 top-6 flex h-6 w-6 items-center justify-center rounded-full bg-slate-100">
+          <span class="text-sm font-bold text-green-600"> 0</span>
+        </div>
       </button>
       <DialogStoreCart v-model="openCardDialog" />
     </div>
