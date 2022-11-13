@@ -10,8 +10,13 @@ export default class ProductsServiceHttp implements ProductService {
     return response;
   }
 
-  async getSingleProduct(id: number): Promise<Products> {
+  async getSingleProduct(id: string): Promise<Products> {
     const response = await this.httpClient.get(`products/${id}`);
+    return response;
+  }
+
+  async getProductInSpecificCategory(category: string): Promise<Products[]> {
+    const response = await this.httpClient.get(`products/category/${category}`);
     return response;
   }
 

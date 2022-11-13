@@ -1,10 +1,14 @@
 import { createApp } from 'vue';
+import { createPinia } from 'pinia';
 import App from './App.vue';
 import router from './router';
 import './styles/main.css';
 import 'animate.css';
 
 const app = createApp(App);
+const pinia = createPinia();
+app.use(router);
+app.use(pinia);
 
 import AxiosAdapter from './infra/AxiosAdapter';
 const httpClient = new AxiosAdapter();
@@ -15,5 +19,8 @@ const productService = new ProductServiceHttp(httpClient);
 
 app.provide('productService', productService);
 
-app.use(router);
+pinia.use(({ store }) => {
+  store.productsService = productService;
+});
+
 app.mount('#app');
