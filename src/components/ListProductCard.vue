@@ -1,11 +1,14 @@
 <script lang="ts" setup>
   import { IconStar } from '@iconify-prerendered/vue-ph';
+  import { useCartStore } from '~/store/Cart';
   import type { Products } from '~/@types/IProducts';
 
   interface CardProps {
     product: Products;
   }
   defineProps<CardProps>();
+
+  const cartStore = useCartStore();
 
   type categoriesType = {
     [key: string]: string;
@@ -17,6 +20,15 @@
     "men's clothing": 'Roupas Masculinas',
     "women's clothing": 'Roupas Femininas',
   };
+
+  function handleAddItem(product: Products) {
+    cartStore.addCartList({
+      id: product.id,
+      title: product.title,
+      price: product.price,
+      image: product.image,
+    });
+  }
 </script>
 
 <template>
@@ -53,7 +65,10 @@
           <span class="rounded-lg bg-slate-700 px-2 text-center text-[12px]">{{ product.rating.count }}</span>
         </div>
       </div>
-      <button class="w-full rounded-lg bg-green-600 py-2 transition-all duration-300 hover:bg-opacity-60">
+      <button
+        class="w-full rounded-lg bg-green-600 py-2 transition-all duration-300 hover:bg-opacity-60 active:bg-green-500"
+        @click="handleAddItem(product)"
+      >
         Adicionar
       </button>
     </div>

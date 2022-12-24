@@ -1,11 +1,15 @@
 <script lang="ts" setup>
   import { ref } from 'vue';
   import { IconShoppingCart } from '@iconify-prerendered/vue-ph';
+  import { useCartStore } from '~/store/Cart';
+  import { storeToRefs } from 'pinia';
   import DialogStoreCart from './DialogStoreCart.vue';
 
-  const openCardDialog = ref(false);
+  const cartStore = useCartStore();
+  const { getQuantityCartItem } = storeToRefs(cartStore);
 
-  const handleCardDialog = () => (openCardDialog.value = !openCardDialog.value);
+  const openCardDialog = ref(false);
+  const handleCardDialog = () => (openCardDialog.value = true);
 </script>
 <template>
   <header class="flex flex-col justify-center gap-4 border-b border-slate-700 py-4 px-4 sm:flex-row sm:justify-between">
@@ -25,7 +29,7 @@
       >
         <IconShoppingCart class="h-10 w-10" />
         <div class="absolute left-5 top-6 flex h-6 w-6 items-center justify-center rounded-full bg-slate-100">
-          <span class="text-sm font-bold text-green-600"> 0</span>
+          <span class="text-sm font-bold text-green-600"> {{ getQuantityCartItem }} </span>
         </div>
       </button>
       <DialogStoreCart v-model="openCardDialog" />

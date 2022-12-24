@@ -1,7 +1,13 @@
 <script lang="ts" setup>
+  import { storeToRefs } from 'pinia';
+  import { useCartStore } from '~/store/Cart';
+
   const props = defineProps({
     modelValue: Boolean,
   });
+  const cartStore = useCartStore();
+  const { getCartList } = storeToRefs(cartStore);
+
   const emits = defineEmits(['update:modelValue']);
 
   const handleCloseDialog = () => emits('update:modelValue', false);
@@ -19,6 +25,30 @@
     >
       <div class="flex items-center justify-center pt-6 pb-4">
         <h2 class="text-lg font-bold">Seu carrinho</h2>
+      </div>
+      <div class="flex flex-col gap-2">
+        <div
+          v-for="(item, index) in getCartList"
+          :key="index"
+          class="grid grid-cols-4 gap-4 rounded bg-slate-800 p-2"
+        >
+          <div class="col-span-1 flex justify-center rounded bg-white p-1">
+            <img
+              :src="item.image"
+              :alt="item.title"
+              class="h-20"
+            />
+          </div>
+          <div class="col-span-2">
+            <h2 class="truncate text-lg font-bold text-slate-400">
+              {{ item.title }}
+            </h2>
+            <span class="text-slate-300"> x {{ item.quantity }} </span>
+          </div>
+          <div class="col-span-1 flex items-center justify-end">
+            {{ item.price * item.quantity }}
+          </div>
+        </div>
       </div>
     </div>
   </div>
